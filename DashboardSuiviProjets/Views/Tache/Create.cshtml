@@ -1,0 +1,28 @@
+﻿@model DashboardSuiviProjets.Models.Tache
+
+<h2>Créer une Tâche</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Nom"></label>
+        <input asp-for="Nom" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DateEcheance"></label>
+        <input asp-for="DateEcheance" type="date" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EstTerminee"></label>
+        <input asp-for="EstTerminee" type="checkbox" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Enregistrer</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

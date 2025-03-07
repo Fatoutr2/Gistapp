@@ -1,0 +1,37 @@
+﻿@model IEnumerable<DashboardSuiviProjets.Models.Utilisateur>
+
+@{
+    ViewData["Title"] = "Liste des Utilisateurs";
+}
+
+<h2>Liste des Utilisateurs</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Ajouter un utilisateur</a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Rôle</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var utilisateur in Model)
+        {
+            <tr>
+                <td>@utilisateur.Nom</td>
+                <td>@utilisateur.Email</td>
+                <td>@utilisateur.Role</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@utilisateur.Id" class="btn btn-warning">Modifier</a>
+                    <a asp-action="Details" asp-route-id="@utilisateur.Id" class="btn btn-info">Détails</a>
+                    <a asp-action="Delete" asp-route-id="@utilisateur.Id" class="btn btn-danger">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

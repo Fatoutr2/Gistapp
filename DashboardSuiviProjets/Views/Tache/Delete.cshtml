@@ -1,0 +1,22 @@
+﻿@model DashboardSuiviProjets.Models.Tache
+
+@{
+    ViewData["Title"] = "Supprimer la Tâche";
+}
+
+<h2>Supprimer la Tâche</h2>
+
+<h3>Êtes-vous sûr de vouloir supprimer cette tâche ?</h3>
+
+<div>
+    <h4>@Model.Nom</h4>
+    <p>@Model.Description</p>
+    <p><strong>Date d'échéance :</strong> @Model.DateEcheance.ToShortDateString()</p>
+    <p><strong>Statut :</strong> @(Model.EstTerminee ? "Terminée" : "En cours")</p>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Supprimer</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

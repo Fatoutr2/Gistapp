@@ -1,0 +1,39 @@
+﻿@model IEnumerable<DashboardSuiviProjets.Models.Tache>
+
+@{
+    ViewData["Title"] = "Liste des Tâches";
+}
+
+<h2>Liste des Tâches</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Créer une nouvelle tâche</a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Date d'échéance</th>
+            <th>Statut</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tache in Model)
+        {
+            <tr>
+                <td>@tache.Nom</td>
+                <td>@tache.Description</td>
+                <td>@tache.DateEcheance.ToShortDateString()</td>
+                <td>@(tache.EstTerminee ? "Terminée" : "En cours")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@tache.Id" class="btn btn-warning">Modifier</a>
+                    <a asp-action="Details" asp-route-id="@tache.Id" class="btn btn-info">Détails</a>
+                    <a asp-action="Delete" asp-route-id="@tache.Id" class="btn btn-danger">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

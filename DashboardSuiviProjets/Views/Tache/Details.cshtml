@@ -1,0 +1,17 @@
+﻿@model DashboardSuiviProjets.Models.Tache
+
+@{
+    ViewData["Title"] = "Détails de la Tâche";
+}
+
+<h2>Détails de la Tâche</h2>
+
+<div>
+    <h4>@Model.Nom</h4>
+    <p><strong>Description :</strong> @Model.Description</p>
+    <p><strong>Date d'échéance :</strong> @Model.DateEcheance.ToShortDateString()</p>
+    <p><strong>Statut :</strong> @(Model.EstTerminee ? "Terminée" : "En cours")</p>
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Modifier</a>
+<a asp-action="Index" class="btn btn-secondary">Retour</a>
