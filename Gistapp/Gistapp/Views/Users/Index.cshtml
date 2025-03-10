@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Gistapp.Models.Users>
+
+@{
+    ViewData["Title"] = "Liste des Utilisateurs";
+}
+
+<h2>Liste des Utilisateurs</h2>
+<a asp-action="Create" class="btn btn-primary">Ajouter un Utilisateur</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nom d'utilisateur</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Username</td>
+                <td>@user.Email</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@user.UserId" class="btn btn-warning">Modifier</a>
+                    <a asp-action="Details" asp-route-id="@user.UserId" class="btn btn-info">Détails</a>
+                    <a asp-action="Delete" asp-route-id="@user.UserId" class="btn btn-danger">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

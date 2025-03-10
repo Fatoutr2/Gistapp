@@ -1,0 +1,21 @@
+﻿@model Gistapp.Models.Tasks
+
+@{
+    ViewData["Title"] = "Supprimer la Tâche";
+}
+
+<h2>Supprimer la Tâche</h2>
+
+<div class="alert alert-danger">
+    <p>Êtes-vous sûr de vouloir supprimer cette tâche ?</p>
+    <ul>
+        <li><strong>Titre :</strong> @Model.Title</li>
+        <li><strong>Description :</strong> @Model.Description</li>
+    </ul>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="TaskId" />
+    <button type="submit" class="btn btn-danger">Oui, Supprimer</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

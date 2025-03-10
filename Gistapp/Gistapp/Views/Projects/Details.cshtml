@@ -1,0 +1,20 @@
+﻿@model Gistapp.Models.Projects
+
+@{
+    ViewData["Title"] = "Détails du Projet";
+}
+
+<h2>Détails du Projet</h2>
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">@Model.Name</h4>
+        <p class="card-text"><strong>Description :</strong> @Model.Description</p>
+        <p><strong>Date de début :</strong> @Model.StartDate.ToShortDateString()</p>
+        <p><strong>Date de fin :</strong> @Model.EndDate.ToShortDateString()</p>
+        <p><strong>Progression :</strong> @Model.Progress %</p>
+    </div>
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.ProjectId" class="btn btn-warning">Modifier</a>
+<a asp-action="Index" class="btn btn-secondary">Retour à la liste</a>

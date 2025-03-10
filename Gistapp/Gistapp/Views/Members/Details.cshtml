@@ -1,0 +1,17 @@
+﻿@model Gistapp.Models.Members
+
+@{
+    ViewData["Title"] = "Détails du Membre";
+}
+
+<h2>Détails du Membre</h2>
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">@Model.FullName</h4>
+        <p class="card-text"><strong>Email :</strong> @Model.Email</p>
+    </div>
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.MemberId" class="btn btn-warning">Modifier</a>
+<a asp-action="Index" class="btn btn-secondary">Retour à la liste</a>

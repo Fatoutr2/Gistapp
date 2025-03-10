@@ -1,0 +1,74 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Authentification</title>
+
+    <!-- Lien vers Font Awesome et Google Fonts pour améliorer l'esthétique -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/kMVq8q3a8WxJb3j9x9z+9oVx5F5S7s5la5k60z7Bb5j5rD4I/LLFQpC5Vh5NJ5L9w5J6aQZrTnlA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/auth.css" asp-append-version="true" />
+
+    
+</head>
+
+<body>
+    <header>
+
+        <nav>
+            <div class="navbar">
+                <div class="logo">
+                    <a>
+                        Gistapp
+                    </a>
+                </div>
+                <div class="navigation">
+                    <div class="menu-list">
+                        <ul>
+                            <li><a asp-controller="Home" asp-action="Index">Accueil</a></li>
+                            <li><a asp-controller="Home" asp-action="About">About us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <div class="login-wrapper">
+            <div class="login-container">
+                <div class="tata">
+                    <h3><i class="title"></i> Connectez-vous</h3>
+                </div>
+                <form class="conform" method="POST" action="/login">
+                    <div class="form-group">
+                        <label for="login-user-input">Nom d'utilisateur</label>
+                        <input type="text" class="form-control" name="user_nom" id="login-user-input" placeholder="Votre nom d'utilisateur" required autofocus />
+                    </div>
+                    <div class="form-group">
+                        <label for="login-user-password">Mot de passe</label>
+                        <input type="password" class="form-control" name="user_login" id="login-user-password" placeholder="Votre mot de passe" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" name="login-remember-checkbox" id="login-remember-checkbox" />
+                        <label for="login-remember-checkbox" style="display:inline;">Rester connecté</label>
+                    </div>
+                    <button class="btn-login" type="submit">
+                        <i class="fas fa-sign-in-alt"></i> Se connecter
+                    </button>
+                    <div class="forgot-password">
+                        <a href="/forgot-password">Mot de passe oublié ?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+
+</body>
+</html>

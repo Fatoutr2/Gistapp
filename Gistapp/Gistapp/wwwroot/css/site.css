@@ -1,0 +1,233 @@
+html {
+  font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color : black
+}
+
+a:hover {
+    /*text-decoration: underline;*/ /* ou none, selon votre préférence */
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8f8f8; /* couleur de fond, à modifier si nécessaire */
+    padding: 10px 20px;
+}
+
+.logo {
+    flex : 2;
+    margin-left: 10px;
+    font-size: 40px;
+    font-family: "Big Shoulders Inline", sans-serif;
+}
+
+    .logo a {
+        color: #590300;
+    }
+
+.navigation {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.menu-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display : flex;
+    /*width: 250px;
+    margin : 20px 0 0;*/
+    /*font-size: 15px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-content: end;
+    list-style-type: none;*/
+}
+
+    /*.menu-list{
+    margin-left: 40px;
+}*/
+
+.menu-list ul li {
+    margin-right: 20px;
+    font-size: 17px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.menu-list ul li:last-child {
+    margin-right: 0;
+}
+
+.menu-list a:hover {
+    text-decoration: none;
+    color: #590300;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.inscription,
+.connexion {
+    width: 150px;
+    height: 30px;
+    /*background-color: rgb(89, 3, 0, 0.8);*/
+    border-radius: 20px;
+    margin-left: 10px;
+    display: flex;
+    font-size: 17px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.inscription {
+    background-color: rgb(89, 3, 0, 0.78);
+}
+
+    .inscription a {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding-top: 2px;
+        text-decoration: none;
+        color: antiquewhite;
+    }
+
+    .inscription:hover {
+        background-color: rgb(89, 3, 0, 1);
+    }
+
+.connexion {
+    background-color: rgb(89, 3, 0, 0.78);
+}
+
+    .connexion a {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding-top: 2px;
+        text-decoration: none;
+        color: antiquewhite;
+    }
+
+    .connexion:hover {
+        background-color: rgb(89, 3, 0, 1);
+    }
+
+.banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.5)), url("/Ressources/images/img02.jpeg"); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    /*background-color: rgb(110, 113, 110, 0.8);*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    text-align: center;
+    color: #fff;
+}
+
+.banner{
+    margin: 20px     40px
+}
+
+.wrapper span {
+    font-size: 17px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.wrapper h1 {
+    margin: 0;
+    font-size: 50px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.btn-slogan {
+    margin: 2vh 20vh;
+    height: 5vh;
+    background-color: rgb(89, 3, 0, 0.6);
+    font-family: "Open Sans", sans-serif;
+    align-content: center;
+    border-radius: 5px;
+}
+
+    .btn-slogan:hover {
+        background-color: rgb(89, 3, 0, 1);
+    }
+
+    .btn-slogan a {
+        display: block;
+        align-content: center;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: antiquewhite;
+    }
+
+    .description{
+        display: flex;
+    }
+
+    .desc{
+        width: 100vh;
+        margin: 20px 40px
+    }
+
+        .desc h1 {
+            font-family: "Open Sans", sans-serif;
+            font-size: 40px
+        }
+        
+        .desc p {
+            font-family: "Open Sans", sans-serif;
+            font-size: 20px
+        }
+
+.imgdesc {
+     padding: 68px 0;
+}
+        .imgdesc img{
+            width: 70vh;
+            height: 55vh;
+        }
+
+.footer {
+    
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+}
+    
+    /*----------------------------------------------------------A revoir--------------------------------------------------------------------*/
+    @media (min-width: 768px) {
+        html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/*----------------------------------------------------------Fin : A revoir--------------------------------------------------------------------*/
+
+

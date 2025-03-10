@@ -1,0 +1,23 @@
+﻿@model Gistapp.Models.Projects
+
+@{
+    ViewData["Title"] = "Supprimer le Projet";
+}
+
+<h2>Supprimer le Projet</h2>
+
+<div class="alert alert-danger">
+    <p>Êtes-vous sûr de vouloir supprimer ce projet ?</p>
+    <ul>
+        <li><strong>Nom :</strong> @Model.Name</li>
+        <li><strong>Description :</strong> @Model.Description</li>
+        <li><strong>Date de début :</strong> @Model.StartDate.ToShortDateString()</li>
+        <li><strong>Date de fin :</strong> @Model.EndDate.ToShortDateString()</li>
+    </ul>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="ProjectId" />
+    <button type="submit" class="btn btn-danger">Oui, Supprimer</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

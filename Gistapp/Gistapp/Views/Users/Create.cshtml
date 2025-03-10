@@ -1,0 +1,22 @@
+﻿@model Gistapp.Models.Users
+
+@{
+    ViewData["Title"] = "Créer un Utilisateur";
+}
+
+<h2>Créer un Utilisateur</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Username">Nom d'utilisateur</label>
+        <input asp-for="Username" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" type="email" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-success">Créer</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

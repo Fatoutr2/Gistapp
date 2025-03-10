@@ -1,0 +1,185 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Gistapp.Models.DashboardViewModel
+
+@{
+    ViewData["Title"] = "Tableau de Bord du Chef de Projet";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f4f7f6;
+    }
+
+    .dashboard-container {
+        padding: 30px;
+    }
+
+    .section-title {
+        font-size: 22px;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 15px;
+    }
+
+    .card {
+        border-radius: 12px;
+        transition: transform 0.2s ease-in-out;
+    }
+
+        .card:hover {
+            transform: scale(1.02);
+        }
+
+    .card-header {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .btn {
+        border-radius: 8px;
+    }
+
+    .task-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+        .task-item:last-child {
+            border-bottom: none;
+        }
+
+        .task-item i {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+    .task-completed {
+        text-decoration: line-through;
+        color: gray;
+    }
+</style>
+
+<div class="container dashboard-container">
+    <h2 class="text-center text-primary"><i class="fa-solid fa-chart-line"></i> Tableau de Bord du Chef de Projet</h2>
+
+    <div class="row mt-4">
+        <!-- Section Projets -->
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <i class="fa-solid fa-folder"></i> Gestion des Projets
+                </div>
+                <div class="card-body">
+                    <a asp-action="Create" asp-controller="Projects" class="btn btn-success w-100 mb-2"><i class="fa-solid fa-plus"></i> Créer un Projet</a>
+                    <ul class="list-group">
+                        @foreach (var project in Model.Projects)
+                        {
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span>@project.Name</span>
+                                <div>
+                                    <a asp-action="Edit" asp-controller="Projects" asp-route-id="@project.ProjectId" class="btn btn-warning btn-sm"><i class="fa-solid fa-pen"></i></a>
+                                    <a asp-action="Details" asp-controller="Projects" asp-route-id="@project.ProjectId" class="btn btn-info btn-sm"><i class="fa-solid fa-eye"></i></a>
+                                    <a asp-action="Delete" asp-controller="Projects" asp-route-id="@project.ProjectId" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Tâches -->
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-header bg-secondary text-white">
+                    <i class="fa-solid fa-list-check"></i> Gestion des Tâches
+                </div>
+                <div class="card-body">
+                    <a asp-action="Create" asp-controller="Tasks" class="btn btn-success w-100 mb-2"><i class="fa-solid fa-plus"></i> Créer une Tâche</a>
+                    <ul class="list-group">
+                        @foreach (var task in Model.Tasks)
+                        {
+                            <li class="task-item @(task.IsCompleted ? "task-completed" : "")">
+                                <span><i class="fa-solid fa-tasks"></i> @task.Title</span>
+                                <div>
+                                    <a asp-action="Edit" asp-controller="Tasks" asp-route-id="@task.TaskId" class="btn btn-warning btn-sm"><i class="fa-solid fa-pen"></i></a>
+                                    <a asp-action="Details" asp-controller="Tasks" asp-route-id="@task.TaskId" class="btn btn-info btn-sm"><i class="fa-solid fa-eye"></i></a>
+                                    <a asp-action="Delete" asp-controller="Tasks" asp-route-id="@task.TaskId" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Membres -->
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-header bg-dark text-white">
+                    <i class="fa-solid fa-users"></i> Gestion des Membres
+                </div>
+                <div class="card-body">
+                    <a asp-action="Create" asp-controller="Members" class="btn btn-success w-100 mb-2"><i class="fa-solid fa-user-plus"></i> Ajouter un Membre</a>
+                    <ul class="list-group">
+                        @foreach (var member in Model.Members)
+                        {
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span>@member.FullName</span>
+                                <div>
+                                    <a asp-action="Edit" asp-controller="Members" asp-route-id="@member.MemberId" class="btn btn-warning btn-sm"><i class="fa-solid fa-pen"></i></a>
+                                    <a asp-action="Delete" asp-controller="Members" asp-route-id="@member.MemberId" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Affectation des Membres aux Tâches -->
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-info text-white">
+                    <i class="fa-solid fa-user-check"></i> Affecter un Membre à une Tâche
+                </div>
+                <div class="card-body">
+                    <form asp-action="AssignMemberToTask" asp-controller="Tasks" method="post">
+                        <div class="form-group">
+                            <label for="taskId">Sélectionner une Tâche</label>
+                            <select class="form-control" name="taskId" required>
+                                @foreach (var task in Model.Tasks)
+                                {
+                                    <option value="@task.TaskId">@task.Title</option>
+                                }
+                            </select>
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <label for="memberId">Sélectionner un Membre</label>
+                            <select class="form-control" name="memberId" required>
+                                @foreach (var member in Model.Members)
+                                {
+                                    <option value="@member.MemberId">@member.FullName</option>
+                                }
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-info mt-3"><i class="fa-solid fa-user-check"></i> Affecter</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Gistapp.Models.Tasks>
+
+@{
+    ViewData["Title"] = "Liste des Tâches";
+}
+
+<h2>Liste des Tâches</h2>
+<a asp-action="Create" class="btn btn-primary">Ajouter une Tâche</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Description</th>
+            <th>Date d'échéance</th>
+            <th>Statut</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var task in Model)
+        {
+            <tr>
+                <td>@task.Title</td>
+                <td>@task.Description</td>
+                <td>@(task.DueDate?.ToShortDateString() ?? "Non définie")</td>
+                <td>@(task.IsCompleted ? "Terminée" : "En cours")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@task.TaskId" class="btn btn-warning">Modifier</a>
+                    <a asp-action="Details" asp-route-id="@task.TaskId" class="btn btn-info">Détails</a>
+                    <a asp-action="Delete" asp-route-id="@task.TaskId" class="btn btn-danger">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

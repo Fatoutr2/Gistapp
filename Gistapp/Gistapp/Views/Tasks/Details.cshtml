@@ -1,0 +1,19 @@
+﻿@model Gistapp.Models.Tasks
+
+@{
+    ViewData["Title"] = "Détails de la Tâche";
+}
+
+<h2>Détails de la Tâche</h2>
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">@Model.Title</h4>
+        <p class="card-text"><strong>Description :</strong> @Model.Description</p>
+        <p><strong>Date d'échéance :</strong> @(Model.DueDate?.ToShortDateString() ?? "Non définie")</p>
+        <p><strong>Statut :</strong> @(Model.IsCompleted ? "Terminée" : "En cours")</p>
+    </div>
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.TaskId" class="btn btn-warning">Modifier</a>
+<a asp-action="Index" class="btn btn-secondary">Retour à la liste</a>

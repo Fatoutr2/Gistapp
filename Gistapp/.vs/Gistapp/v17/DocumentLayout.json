@@ -1,0 +1,266 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|c:\\users\\user\\desktop\\gistapp_projet\\gistapp\\gistapp\\models\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|solutionrelative:gistapp\\models\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|c:\\users\\user\\desktop\\gistapp_projet\\gistapp\\gistapp\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|solutionrelative:gistapp\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|c:\\users\\user\\desktop\\gistapp_projet\\gistapp\\gistapp\\services\\memberservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|solutionrelative:gistapp\\services\\memberservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|c:\\users\\user\\desktop\\gistapp_projet\\gistapp\\gistapp\\services\\imemberservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|solutionrelative:gistapp\\services\\imemberservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|c:\\users\\user\\desktop\\gistapp_projet\\gistapp\\gistapp\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|solutionrelative:gistapp\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|c:\\users\\user\\desktop\\gistapp_projet\\gistapp\\gistapp\\models\\tasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|solutionrelative:gistapp\\models\\tasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|c:\\users\\user\\desktop\\gistapp_projet\\gistapp\\gistapp\\models\\resources.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|solutionrelative:gistapp\\models\\resources.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|c:\\users\\user\\desktop\\gistapp_projet\\gistapp\\gistapp\\models\\projects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|solutionrelative:gistapp\\models\\projects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|c:\\users\\user\\desktop\\gistapp_projet\\gistapp\\gistapp\\models\\projectresources.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|solutionrelative:gistapp\\models\\projectresources.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|c:\\users\\user\\desktop\\gistapp_projet\\gistapp\\gistapp\\models\\projectmembers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|solutionrelative:gistapp\\models\\projectmembers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|c:\\users\\user\\desktop\\gistapp_projet\\gistapp\\gistapp\\models\\members.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|solutionrelative:gistapp\\models\\members.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|c:\\users\\user\\desktop\\gistapp_projet\\gistapp\\gistapp\\views\\page_chefproj\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|solutionrelative:gistapp\\views\\page_chefproj\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|c:\\users\\user\\desktop\\gistapp_projet\\gistapp\\gistapp\\views\\login\\authentification.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|solutionrelative:gistapp\\views\\login\\authentification.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|c:\\users\\user\\desktop\\gistapp_projet\\gistapp\\gistapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EA601AFB-16E8-4030-94F0-5C9E10AF3E6F}|Gistapp\\Gistapp.csproj|solutionrelative:gistapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IMemberService.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Services\\IMemberService.cs",
+              "RelativeDocumentMoniker": "Gistapp\\Services\\IMemberService.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Services\\IMemberService.cs",
+              "RelativeToolTip": "Gistapp\\Services\\IMemberService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T18:08:32.63Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MemberService.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Services\\MemberService.cs",
+              "RelativeDocumentMoniker": "Gistapp\\Services\\MemberService.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Services\\MemberService.cs",
+              "RelativeToolTip": "Gistapp\\Services\\MemberService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T18:08:26.963Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "Gistapp\\Controllers\\DashboardController.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "Gistapp\\Controllers\\DashboardController.cs",
+              "ViewState": "AgIAAAwAAADgzczMzEwXwBkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T17:55:50.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Users.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Models\\Users.cs",
+              "RelativeDocumentMoniker": "Gistapp\\Models\\Users.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Models\\Users.cs",
+              "RelativeToolTip": "Gistapp\\Models\\Users.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T17:54:55.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Tasks.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Models\\Tasks.cs",
+              "RelativeDocumentMoniker": "Gistapp\\Models\\Tasks.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Models\\Tasks.cs",
+              "RelativeToolTip": "Gistapp\\Models\\Tasks.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T17:54:51.536Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DashboardViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Models\\DashboardViewModel.cs",
+              "RelativeDocumentMoniker": "Gistapp\\Models\\DashboardViewModel.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Models\\DashboardViewModel.cs",
+              "RelativeToolTip": "Gistapp\\Models\\DashboardViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T17:52:30.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Resources.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Models\\Resources.cs",
+              "RelativeDocumentMoniker": "Gistapp\\Models\\Resources.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Models\\Resources.cs",
+              "RelativeToolTip": "Gistapp\\Models\\Resources.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T17:54:46.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Projects.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Models\\Projects.cs",
+              "RelativeDocumentMoniker": "Gistapp\\Models\\Projects.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Models\\Projects.cs",
+              "RelativeToolTip": "Gistapp\\Models\\Projects.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T17:54:42.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProjectResources.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Models\\ProjectResources.cs",
+              "RelativeDocumentMoniker": "Gistapp\\Models\\ProjectResources.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Models\\ProjectResources.cs",
+              "RelativeToolTip": "Gistapp\\Models\\ProjectResources.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T17:54:40.012Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProjectMembers.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Models\\ProjectMembers.cs",
+              "RelativeDocumentMoniker": "Gistapp\\Models\\ProjectMembers.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Models\\ProjectMembers.cs",
+              "RelativeToolTip": "Gistapp\\Models\\ProjectMembers.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T17:54:37.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Members.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Models\\Members.cs",
+              "RelativeDocumentMoniker": "Gistapp\\Models\\Members.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Models\\Members.cs",
+              "RelativeToolTip": "Gistapp\\Models\\Members.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T17:54:33.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Views\\page_chefproj\\Index.cshtml",
+              "RelativeDocumentMoniker": "Gistapp\\Views\\page_chefproj\\Index.cshtml",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Views\\page_chefproj\\Index.cshtml",
+              "RelativeToolTip": "Gistapp\\Views\\page_chefproj\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-10T17:39:48.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Authentification.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Views\\Login\\Authentification.cshtml",
+              "RelativeDocumentMoniker": "Gistapp\\Views\\Login\\Authentification.cshtml",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Views\\Login\\Authentification.cshtml",
+              "RelativeToolTip": "Gistapp\\Views\\Login\\Authentification.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-10T17:40:19.355Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Gistapp\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Gistapp_projet\\Gistapp\\Gistapp\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Gistapp\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-10T17:40:08.498Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

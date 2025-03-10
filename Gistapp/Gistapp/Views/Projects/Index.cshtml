@@ -1,0 +1,39 @@
+﻿<!--Vue listant les projets-->
+@model IEnumerable<Gistapp.Models.Projects>
+
+@{
+    ViewData["Title"] = "Liste des Projets";
+}
+
+<h2>Liste des Projets</h2>
+<a asp-action="Create" class="btn btn-primary">Ajouter un Projet</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Date de début</th>
+            <th>Date de fin</th>
+            <th>Progression</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var project in Model)
+        {
+            <tr>
+                <td>@project.Name</td>
+                <td>@project.Description</td>
+                <td>@project.StartDate.ToShortDateString()</td>
+                <td>@project.EndDate.ToShortDateString()</td>
+                <td>@project.Progress %</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@project.ProjectId" class="btn btn-warning">Modifier</a>
+                    <a asp-action="Details" asp-route-id="@project.ProjectId" class="btn btn-info">Détails</a>
+                    <a asp-action="Delete" asp-route-id="@project.ProjectId" class="btn btn-danger">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

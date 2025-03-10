@@ -1,0 +1,21 @@
+﻿@model Gistapp.Models.Users
+
+@{
+    ViewData["Title"] = "Supprimer l'Utilisateur";
+}
+
+<h2>Supprimer l'Utilisateur</h2>
+
+<div class="alert alert-danger">
+    <p>Êtes-vous sûr de vouloir supprimer cet utilisateur ?</p>
+    <ul>
+        <li><strong>Nom d'utilisateur :</strong> @Model.Username</li>
+        <li><strong>Email :</strong> @Model.Email</li>
+    </ul>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="UserId" />
+    <button type="submit" class="btn btn-danger">Oui, Supprimer</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>
