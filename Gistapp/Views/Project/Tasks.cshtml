@@ -1,0 +1,27 @@
+﻿@model List<Gistapp.Models.ProjectTask>
+
+<h2>Tâches du projet : @ViewBag.ProjectName</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Date limite</th>
+            <th>État</th>
+            <th>Membres assignés</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var task in Model)
+        {
+            <tr>
+                <td>@task.Title</td>
+                <td>@task.DueDate.ToShortDateString()</td>
+                <td>@(task.IsCompleted ? "✅ Terminé" : "⏳ En cours")</td>
+                <td>
+                    @string.Join(", ", task.ProjectTaskMembers.Select(m => m.User.UserName))
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

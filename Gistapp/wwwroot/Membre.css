@@ -1,0 +1,194 @@
+﻿/* Style général */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+}
+
+/* HEADER */
+.header {
+    background: #5D001E; /* Rouge foncé */
+    color: white !important;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+    .header .logo {
+        color: white !important;
+        font-size: 22px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+.header-left {
+    color: white;
+    flex: 1;
+}
+
+.header-right {
+    text-align: right;
+}
+
+.header .logout {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding-right: 20px;
+}
+
+header .logo:visited,
+.header .logo:active,
+.header .logo:hover {
+    color: white !important;
+    text-decoration: none;
+}
+
+/* Sidebar en bordeaux avec texte centré */
+#sidebar {
+    background: #5d0010; /* Rouge bordeaux */
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    padding-top: 50px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profil {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+    .profil p, h5{
+        display: flex;
+        justify-content: center;
+    }
+
+/* Style des liens du menu */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+    .sidebar-menu li {
+        padding: 15px;
+    }
+
+        .sidebar-menu li a {
+            color: #ddd;
+            text-decoration: none;
+            display: block;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+            .sidebar-menu li a:hover {
+                background: #a52a2a; /* Rouge foncé */
+                color: #fff;
+                border-radius: 5px;
+            }
+
+/* Section principale */
+#main-content {
+    margin-left: 260px;
+    padding: 20px;
+}
+
+/* Style des catégories de tâches */
+h4.text-center {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+h4.text-danger {
+    background: #ffcccc;
+}
+
+h4.text-warning {
+    background: #fff0b3;
+}
+
+h4.text-success {
+    background: #d4edda;
+}
+
+/* Style des tâches */
+.list-group {
+    background: white;
+    border-radius: 5px;
+    padding: 10px;
+    min-height: 150px;
+}
+
+.list-group-item {
+    margin: 5px 0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    transition: 0.3s ease-in-out;
+}
+
+    .list-group-item:hover {
+        background: #f9f9f9;
+        transform: scale(1.02);
+    }
+
+/* Style des badges */
+.badge-info {
+    background: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+/* Bouton "Ajouter une tâche" */
+.btn-primary {
+    background: #007bff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+    .btn-primary:hover {
+        background: #0056b3;
+    }
+
+/* Responsive */
+@media (max-width: 768px) {
+    #sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    #main-content {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .col-md-4 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+.task-card {
+    background: white;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,11 @@
+﻿@model gistapp.Models.Project
+
+<h2>Confirmer la suppression</h2>
+
+<p>Es-tu sûr de vouloir supprimer le projet <strong>@Model.Name</strong> ?</p>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Oui, supprimer</button>
+    <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-secondary">Annuler</a>
+</form>

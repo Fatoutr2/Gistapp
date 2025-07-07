@@ -1,0 +1,37 @@
+﻿@model gistapp.Models.Project 
+@{
+    ViewData["Title"] = "Détails du projet"; 
+    } 
+    <head>
+    <link rel="stylesheet" href="~/css/project-details.css" />
+
+    </head>
+<div class="project-details"> 
+    <h2>@Model.Name</h2> 
+    <p><strong>Description :</strong> @Model.Description</p> 
+    <p> 
+    <strong>Dates :</strong> 
+    @Model.StartDate.ToShortDateString() 
+    @if (Model.EndDate.HasValue) 
+    { 
+    <text> – @Model.EndDate.Value.ToShortDateString()</text> 
+    } 
+    </p> 
+    <p><strong>Catégorie :</strong> @Model.Category</p>
+
+    <a asp-action="Create" asp-controller="ProjectTask" asp-route-projectId="@Model.Id" class="btn btn-primary">
+        ➕ Ajouter une tâche
+    </a>
+
+    <a asp-action="Tasks" asp-controller="Project" asp-route-id="@Model.Id" class="btn btn-secondary">
+        📋 Voir les tâches du projet
+    </a>
+
+    <a asp-action="Delete" asp-controller="Project" asp-route-id="@Model.Id" class="btn btn-danger">
+        🗑️ Supprimer ce projet
+    </a>
+    
+
+    <a asp-action="Index" asp-controller="Dashboard" class="btn btn-secondary">Retour au Dashboard</a> 
+ </div>
+

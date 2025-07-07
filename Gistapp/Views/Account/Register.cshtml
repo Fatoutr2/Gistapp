@@ -1,0 +1,113 @@
+﻿<!--@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}-->
+@model RegisterViewModel
+
+@{
+    ViewData["Title"] = "Inscription";
+}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Inscription</title>
+
+    <!-- Lien vers Font Awesome et Google Fonts pour améliorer l'esthétique -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+
+        <nav>
+            <div class="navbar">
+                <div class="logo">
+                    <a>
+                        Gistapp
+                    </a>
+                </div>
+                <div class="navigation">
+                    <div class="menu-list">
+                        <ul>
+                            <li><a asp-controller="Home" asp-action="Index">Accueil</a></li>
+                            <li><a asp-controller="Home" asp-action="About">About us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="register-wrapper">
+        <div class="register-container">
+            <div class="header-bar">
+                <h3><i class="fas fa-user-plus"></i> Inscription</h3>
+            </div>
+            <form class="form-signup" method="POST" asp-action="Register" asp-controller="Account">
+                @Html.AntiForgeryToken()
+
+                <div class="form-group">
+                    <label asp-for="FirstName"></label>
+                    <input asp-for="FirstName" class="form-control" placeholder="Votre prénom" required />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LastName"></label>
+                    <input asp-for="LastName" class="form-control" placeholder="Votre nom" required />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UserName"></label>
+                    <input asp-for="UserName" class="form-control" placeholder="Votre nom d'utilisateur" required />
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" class="form-control" placeholder="Votre email" required />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password"></label>
+                    <input asp-for="Password" class="form-control" placeholder="Votre mot de passe" required minlength="6" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ConfirmPassword"></label>
+                    <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirmez votre mot de passe" required />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label>Rôle</label>
+                    @foreach (var role in Enum.GetValues(typeof(Gistapp.Models.UserRole)))
+                    {
+                        <input type="radio" asp-for="Role" value="@role">
+                        <label>@role.ToString().Replace("_", " ")</label>
+                        <br/>
+
+                    }
+                    <span asp-validation-for="Role" class="text-danger"></span>
+                </div>
+                <button class="btn btn-register" type="submit">
+                    <i class="fas fa-user-check"></i> S'inscrire
+                </button>
+                <div class="login-link">
+                    <a asp-controller="Home" asp-action="Login">Déjà un compte ? Connectez-vous</a>
+                </div>
+            </form>
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                        {
+                            <li>@error.ErrorMessage</li>
+                        }
+                    </ul>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

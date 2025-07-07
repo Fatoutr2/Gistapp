@@ -1,0 +1,178 @@
+﻿<!--Vue listant les projets-->
+
+@model IEnumerable<gistapp.Models.Project>
+@{
+    ViewData["Title"] = "Dashboard";
+    // Utilisez l'opérateur null-coalescing pour garantir une collection non nulle
+    var projects = Model ?? Enumerable.Empty<gistapp.Models.Project>();
+    var count = projects.Count();
+    var todoProjects = projects.Where(p => p.Category == "ToDo");
+    var inProgressProjects = projects.Where(p => p.Category == "InProgress");
+    var doneProjects = projects.Where(p => p.Category == "Done");
+} 
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @* <title>Tableau de Bord - Projet</title> *@
+    <title>@ViewData["Title"] - GistApp Dashboard</title>
+
+    <link href="~/css/Membre.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <a href="#" class="logo"><b>ESPACE CHEF</b></a>
+        </div>
+        <div class="header-right">
+            <a asp-controller="Home" asp-action="Index" class="">Deconnexion</a>
+        </div>
+    </header>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="profil">
+                <p class="profil-img">
+                    <img src="~/Ressources/images/user.jpg" class="img-circle" width="60">
+                </p>
+                <h5 class="centered">Bienvenue @User.Identity.Name</h5>
+            </div>
+            <ul class="sidebar-menu">
+                <li>
+                    <a href="@Url.Action("Index", "Chef")">
+                        Tableau de bord
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("AddProject", "Dashboard")">
+                        New Project
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Projects", "Dashboard")">
+                        Projects
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Users", "Dashboard")">
+                        Users
+                    </a>
+                </li>
+                <!--<li>
+                    <a href="@Url.Action("Settings", "Dashboard")">
+                        Settings
+                    </a>
+                </li>-->
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content" >
+            <p>Nombre de projets récupérés : @count</p>
+            <div class="board"> 
+                <div class="row">
+                 <!-- Colonne To Do --> 
+                 <div class="board-column"> 
+                     <h4 class="text-center danger">📌 À FAIRE (@todoProjects.Count())</h4>
+                     @foreach (var project in todoProjects)
+                        {
+                            <a asp-controller="Dashboard"
+                               asp-action="Details"
+                               asp-route-id="@project.Id">
+                                <div class="board-item">
+                                    <!--<div class="task-card">-->
+
+                                    <h5>@project.Name</h5>
+                                    <p>@project.Description</p>
+
+                                </div>
+                            </a>
+                     } 
+                 </div>
+
+                 <!-- Colonne In Progress --> 
+                 <div class="board-column">
+                        <h4 class="text-center warning">⚙️ EN COURS (@inProgressProjects.Count())</h4>
+                     @foreach (var project in inProgressProjects)
+                        {
+                            <a asp-controller="Dashboard"
+                               asp-action="Details"
+                               asp-route-id="@project.Id">
+                         <div class="board-item"> 
+                             <h5>@project.Name</h5> 
+                             <p>@project.Description</p>
+                         </div>
+                            </a>
+                     } 
+                 </div> 
+
+                 <!-- Colonne Done --> 
+                 <div class="board-column">
+                        <h4 class="text-center success">✅ TERMINÉES (@doneProjects.Count())</h4>
+                     @foreach (var project in doneProjects)
+                        {
+                            <a asp-controller="Dashboard"
+                               asp-action="Details"
+                               asp-route-id="@project.Id">
+                         <div class="board-item"> 
+                             <h5>@project.Name</h5> 
+                             <p>@project.Description</p>
+                         </div>
+                         </a>
+                     } 
+                 </div> 
+             </div>
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+                }
+
+
+            @* <div class="row"> *@
+            @*     <!-- Colonne To Do --> *@
+            @*     <div class="col-md-4"> *@
+            @*         <h4 class="text-center danger">📌 À FAIRE (@todoProjects.Count())</h4> *@
+            @*         @foreach (var project in todoProjects) *@
+            @*         { *@
+            @*             <div class="board-item"> *@
+            @*                 <!--<div class="task-card">--> *@
+            @*                 <h5>@project.Name</h5> *@
+            @*                 <p>@project.Description</p> *@
+            @*             </div> *@
+            @*         } *@
+            @*     </div> *@
+
+            @*     <!-- Colonne In Progress --> *@
+            @*     <div class="col-md-4 board"> *@
+            @*         <h4 class="text-center warning">⚙️ EN COURS (@inProgressProjects.Count())</h4> *@
+            @*         @foreach (var project in inProgressProjects) *@
+            @*         { *@
+            @*             <div class="board-item"> *@
+            @*                 <h5>@project.Name</h5> *@
+            @*                 <p>@project.Description</p> *@
+            @*             </div> *@
+            @*         } *@
+            @*     </div> *@
+
+            @*     <!-- Colonne Done --> *@
+            @*     <div class="col-md-4 board"> *@
+            @*         <h4 class="text-center success">✅ TERMINÉES (@doneProjects.Count())</h4> *@
+            @*         @foreach (var project in doneProjects) *@
+            @*         { *@
+            @*             <div class="board-item"> *@
+            @*                 <h5>@project.Name</h5> *@
+            @*                 <p>@project.Description</p> *@
+            @*             </div> *@
+            @*         } *@
+            @*     </div> *@
+            @* </div> *@
+
+
+        </div>
+    </div>
+</body>
+    </html>

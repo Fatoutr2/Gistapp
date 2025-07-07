@@ -1,0 +1,55 @@
+﻿<!--Vue pour afficher la page d'accueil (liée à HomeController)-->
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<header>
+<nav>
+    <div class="navbar">
+        <div class="logo">
+            <a>
+                Gistapp
+            </a>
+        </div>
+        <div class="navigation">
+            <div class="menu-list">
+                <ul>
+                    <li><a asp-controller="Home" asp-action="Index">Accueil</a></li>
+                    <li><a asp-controller="Home" asp-action="About">About us</a></li>
+                </ul>
+            </div>
+
+            <div class="inscription">
+                    <a asp-controller="Home" asp-action="Register"> Inscription</a>
+            </div>
+            <div class="connexion">
+                    <a asp-controller="Home" asp-action="Login"> Connexion</a>
+            </div>
+        </div>
+    </div>
+</nav>
+</header>
+<section class="banner">
+    <div class="wrapper">
+        <div class="slogan">
+            <span class="">Rendons la gestion de projet plus facile</span>
+            <h1 class="">Grace à Gistapp</h1>
+            <div class="btn-slogan">
+                <a asp-controller="Home" asp-action="Register" class="">Let's Go</a>
+            </div>
+        </div>
+    </div>
+    
+</section>
+<section class="description">
+    <div class="desc">
+        <h1>Bienvenue sur Gistapp</h1>
+        <p class="desc-text">La gestion de projets est essentielle pour assurer la réussite des équipes et l'atteinte des objectifs. Grâce à Gistapp, vous pouvez planifier, suivre et coordonner vos projets en toute simplicité. Cette solution permet une meilleure organisation des tâches, une allocation optimisée des ressources et une collaboration fluide entre les membres de l'équipe. De plus, les outils intégrés facilitent le suivi de l'avancement en temps réel et l'analyse des performances. Avec une plateforme intuitive et sécurisée, Gistapp vous aide à structurer vos projets et à maximiser votre productivité, tout en s'adaptant aux défis du travail moderne.</p>
+    </div>
+    <div class="imgdesc" data-wow-delay="4000ms">
+        <div class="img-place">
+            <img src="~/Ressources/images/imgdesc.jpeg" alt="Image d'illustration">
+        </div>
+    </div>
+</section>
+

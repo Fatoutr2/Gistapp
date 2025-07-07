@@ -1,0 +1,82 @@
+﻿<!--@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}-->
+@model IEnumerable<gistapp.Models.Project>
+
+<!--@{
+    ViewData["Title"] = "Dashboard";
+    // Filtrage des projets par catégorie
+    //var todoProjects = Model.Where(p => p.Category == "ToDo");
+    //var inProgressProjects = Model.Where(p => p.Category == "InProgress");
+    //var doneProjects = Model.Where(p => p.Category == "Done");
+}-->
+@{
+    ViewData["Title"] = "Dashboard";
+    // Utilisez l'opérateur null-coalescing pour garantir une collection non nulle
+    var projects = Model ?? Enumerable.Empty<gistapp.Models.Project>();
+    var count = projects.Count();
+    var todoProjects = projects.Where(p => p.Category == "ToDo");
+    var inProgressProjects = projects.Where(p => p.Category == "InProgress");
+    var doneProjects = projects.Where(p => p.Category == "Done");
+}
+
+<!--<body>-->
+<div class="dashboard-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>Menu</h3>
+        <ul>
+            <li><a href="@Url.Action("Index", "Chef")">Dashboard</a></li>
+            <li><a href="@Url.Action("AddProject", "Dashboard")">New Project</a></li>
+            <li><a href="@Url.Action("Projects", "Dashboard")">Projects</a></li>
+            <li><a href="@Url.Action("Users", "Dashboard")">Users</a></li>
+            <li><a href="@Url.Action("Settings", "Dashboard")">Settings</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="board">
+            <p>Nombre de projets récupérés : @count</p>
+            <!-- Colonne To Do -->
+            <div class="board-column">
+                <h4>To Do</h4>
+                @foreach (var project in todoProjects)
+                {
+                    <div class="board-item">
+                        <h5>@project.Name</h5>
+                        <p>@project.Description</p>
+                    </div>
+                }
+            </div>
+
+            <!-- Colonne In Progress -->
+            <div class="board-column">
+                <h4>In Progress</h4>
+                @foreach (var project in inProgressProjects)
+                {
+                    <div class="board-item">
+                        <h5>@project.Name</h5>
+                        <p>@project.Description</p>
+                    </div>
+                }
+            </div>
+
+            <!-- Colonne Done -->
+            <div class="board-column">
+                <h4>Done</h4>
+                @foreach (var project in doneProjects)
+                {
+                    <div class="board-item">
+                        <h5>@project.Name</h5>
+                        <p>@project.Description</p>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+

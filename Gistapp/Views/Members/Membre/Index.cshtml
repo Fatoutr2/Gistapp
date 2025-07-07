@@ -1,0 +1,188 @@
+﻿@using System.Linq;
+@using System;
+@model IEnumerable<Gistapp.Models.ProjectTask>
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Tableau de Bord - Membre";
+    // Si Model est null, on utilise une liste vide pour éviter des erreurs.
+    var tasks = Model ?? Enumerable.Empty<Gistapp.Models.ProjectTask>();
+    var count = tasks.Count();
+    // Filtrer les tâches en fonction de leur état. Vous pouvez adapter ces conditions selon votre logique métier.
+    var todoTasks = tasks.Where(t => !t.IsCompleted);
+    var inProgressTasks = tasks.Where(t => !t.IsCompleted && t.DueDate > DateTime.Now);
+    var doneTasks = tasks.Where(t => t.IsCompleted);
+}
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord - Tâches</title>
+
+    @* <link href="~/css/Membre.css" rel="stylesheet"> *@
+</head>
+
+<body>
+    <section id="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <a href="#" class="logo"><b>ESPACE MEMBRE</b></a>
+            </div>
+            <div class="header-right">
+                <a asp-controller="Home" asp-action="Index" class="">Deconnexion</a>
+            </div>
+        </header>
+        <!-- Sidebar -->
+        <aside>
+            <div id="sidebar" class="nav-collapse">
+                <div class="profil">
+                    <p class="profil-img">
+                        <img src="~/Ressources/images/user.jpg" class="img-circle" width="60">
+                    </p>
+                    <h5 class="centered">Bienvenue @User.Identity.Name</h5>
+                </div>
+                <ul class="sidebar-menu">
+                    <li class="mt">
+                        <a class="active" href="#">
+                            <i class="fa fa-dashboard"></i> <span>Tableau de bord</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="#"><i class="fa fa-tasks"></i> <span>Mes Tâches</span></a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div id="main-content">
+            <p>Nombre de projets récupérés : @count</p>
+            <div class="board">
+                <div class="row">
+                    <!-- Colonne To Do -->
+                    <div class="board-column">
+                        <h4 class="text-center danger">📌 À FAIRE (@todoTasks.Count())</h4>
+                        @foreach (var task in inProgressTasks)
+                        {
+                            
+                                <div class="board-item">
+                                    <h5>@task.Title</h5>
+                                    <p>@task.Description</p>
+                                </div>
+                            <div class="task-card">
+                                <h5>@task.Title</h5>
+                                @if (task.AssignedUser != null)
+                                {
+                                    <p>👤 Assigné à : @task.AssignedUser.UserName</p>
+                                }
+                                <p>📅 Date limite : @task.DueDate.ToShortDateString()</p>
+                            </div>
+
+                        }
+                    </div>
+
+                    <!-- Colonne In Progress -->
+                    <div class="board-column">
+                        <h4 class="text-center warning">⚙️ EN COURS (@inProgressTasks.Count())</h4>
+                        @foreach (var task in inProgressTasks) 
+                         { 
+                             <div class="task-card"> 
+                                 <h5>@task.Title</h5> 
+                                 @if (task.AssignedUser != null) 
+                                 { 
+                                     <p>👤 Assigné à : @task.AssignedUser.UserName</p> 
+                                 } 
+                                 <p>📅 Date limite : @task.DueDate.ToShortDateString()</p> 
+                             </div> 
+                         } 
+                    </div>
+
+                    <!-- Colonne Done -->
+                    <div class="board-column">
+                        <h4 class="text-center success">✅ TERMINÉES (@doneTasks.Count())</h4>
+                        @foreach (var task in doneTasks) 
+                         { 
+                             <div class="task-card"> 
+                                 <h5>@task.Title</h5> 
+                                 @if (task.AssignedUser != null) 
+                                 { 
+                                     <p>👤 Assigné à : @task.AssignedUser.UserName</p> 
+                                 } 
+                                <p>📅 Date de fin : @task.DueDate.ToShortDateString()</p> 
+                             </div> 
+                         }
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- Contenu principal -->
+@*         <section id="main-content"> *@
+@*             <section class="wrapper"> *@
+                
+
+@*                 <!-- Vérification de Model --> *@
+@*                 <!-- Affichage pour le débogage --> *@
+@* <p>Nombre total de tâches : @tasks.Count()</p> *@
+@*             <div class="board"> *@
+@*                 <div class="row"> *@
+@*                     <!-- Colonne To Do --> *@
+@*                     <div class="board-column"> *@
+@*                         <h4 class="text-center danger">📌 À FAIRE (@todoTasks.Count())</h4> *@
+@*                         @foreach (var task in todoTasks) *@
+@*                         { *@
+@*                             <div class="task-card"> *@
+@*                                 <h5>@task.Title</h5> *@
+@*                                 @if (task.AssignedUser != null) *@
+@*                                 { *@
+@*                                     <p>👤 Assigné à : @task.AssignedUser.UserName</p> *@
+@*                                 } *@
+@*                                 <p>📅 Date limite : @task.DueDate.ToShortDateString()</p> *@
+@*                             </div> *@
+@*                         } *@
+@*                     </div> *@
+
+@*                     <!-- Colonne In Progress --> *@
+@*                     <div class="board-column"> *@
+@*                         <h4 class="text-center warning">⚙️ EN COURS (@inProgressTasks.Count())</h4> *@
+@*                         @foreach (var task in inProgressTasks) *@
+@*                         { *@
+@*                             <div class="task-card"> *@
+@*                                 <h5>@task.Title</h5> *@
+@*                                 @if (task.AssignedUser != null) *@
+@*                                 { *@
+@*                                     <p>👤 Assigné à : @task.AssignedUser.UserName</p> *@
+@*                                 } *@
+@*                                 <p>📅 Date limite : @task.DueDate.ToShortDateString()</p> *@
+@*                             </div> *@
+@*                         } *@
+@*                     </div> *@
+
+@*                     <!-- Colonne Done --> *@
+@*                     <div class="board-column"> *@
+@*                         <h4 class="text-center success">✅ TERMINÉES (@doneTasks.Count())</h4> *@
+@*                         @foreach (var task in doneTasks) *@
+@*                         { *@
+@*                             <div class="task-card"> *@
+@*                                 <h5>@task.Title</h5> *@
+@*                                 @if (task.AssignedUser != null) *@
+@*                                 { *@
+@*                                     <p>👤 Assigné à : @task.AssignedUser.UserName</p> *@
+@*                                 } *@
+@*                                 <p>📅 Date de fin : @task.DueDate.ToShortDateString()</p> *@
+@*                             </div> *@
+@*                         } *@
+@*                     </div> *@
+@*                 </div> *@
+@*             </div> *@
+@*             </section> *@
+@*         </section> *@
+    </section>
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿@model Gistapp.Models.ViewModels.ProjectTaskViewModel
+
+@{
+    ViewData["Title"] = "Créer une tâche";
+}
+
+<h2>Créer une tâche</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Title" class="control-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description" class="control-label"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DueDate" class="control-label"></label>
+        <input asp-for="DueDate" type="date" class="form-control" />
+        <span asp-validation-for="DueDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Projet</label>
+        <select asp-for="ProjectId" asp-items="Model.AvailableProjects" class="form-control"></select>
+        <span asp-validation-for="ProjectId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Utilisateurs assignés</label>
+        <select asp-for="SelectedMemberIds" asp-items="Model.AvailableUsers" class="form-control" multiple></select>
+    </div>
+
+    <button type="submit" class="btn btn-success">Créer</button>
+    <a asp-action="Login" asp-controller="Account" class="btn btn-secondary">Retour</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

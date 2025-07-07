@@ -1,0 +1,92 @@
+﻿body {
+    font-family: 'Poppins', sans-serif;
+    background: url('https://source.unsplash.com/1600x900/?office,work') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+
+.tata {
+    height: 50px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .tata h3 {
+        margin: 0;
+        color: #000;
+    }
+
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-container {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px #fff;
+    max-width: 400px;
+    width: 100%;
+    padding: 40px;
+}
+
+    .login-container h3 {
+        text-align: center;
+    }
+
+    .login-container label {
+        font-weight: 500;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+        width: 100%;
+        padding: 12px 15px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .login-container .form-group {
+        margin-bottom: 20px;
+    }
+
+    .login-container .btn-login {
+        width: 100%;
+        background: rgb(119, 3, 0, 0.78);
+        color: #fff;
+        border: none;
+        padding: 12px;
+        border-radius: 25px;
+        font-size: 16px;
+        transition: background 0.3s ease;
+        cursor: pointer;
+    }
+
+        .login-container .btn-login:hover {
+            background: rgb(69, 3, 0, 0.78)
+        }
+
+    .login-container .forgot-password {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+        .login-container .forgot-password a {
+            color: rgb(119, 3, 0, 0.78);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+input[type="checkbox"] + label {
+    display: inline;
+}

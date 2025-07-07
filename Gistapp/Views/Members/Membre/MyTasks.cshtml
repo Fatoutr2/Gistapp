@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Gistapp.Models.ProjectTask>
+
+@{
+    ViewBag.Title = "Mes Tâches";
+}
+
+<h2>Mes Tâches</h2>
+
+@if (!Model.Any())
+{
+    <p>Aucune tâche ne vous a encore été assignée.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Date limite</th>
+                <th>Projet</th>
+                <th>Statut</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var task in Model)
+            {
+                <tr>
+                    <td>@task.Title</td>
+                    <td>@task.Description</td>
+                    <td>@task.DueDate.ToShortDateString()</td>
+                    <td>@task.Project?.Name</td>
+                    <td>@(task.IsCompleted ? "Terminée" : "En cours")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -1,0 +1,96 @@
+﻿@model gistapp.Models.Project
+@{
+    ViewData["Title"] = "Modifier le projet";
+}
+
+<div class="edit-project-wrapper">
+    <div class="edit-project-container">
+        <h2 class="text-center">Modifier le projet</h2>
+
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Description"></label>
+                <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="StartDate"></label>
+                <input asp-for="StartDate" type="date" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="EndDate"></label>
+                <input asp-for="EndDate" type="date" class="form-control" />
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Category"></label>
+                <select asp-for="Category" class="form-control">
+                    <option value="ToDo">À faire</option>
+                    <option value="InProgress">En cours</option>
+                    <option value="Done">Terminé</option>
+                </select>
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">💾 Enregistrer</button>
+                <a asp-action="Index" class="btn btn-secondary">Retour</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .edit-project-wrapper {
+            margin: 30px auto;
+            max-width: 700px;
+            background-color: #f8f8f8;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h2.text-center {
+            color: #800020;
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #800020;
+        }
+
+        .form-control {
+            border-radius: 6px;
+        }
+
+        .form-actions {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-primary {
+            background-color: #800020;
+            border-color: #800020;
+        }
+
+        .btn-secondary {
+            background-color: #ccc;
+        }
+    </style>
+}
